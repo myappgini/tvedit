@@ -44,6 +44,11 @@ The same can be found here:
 
 https://github.com/NicolasCARPi/jquery_jeditable/
 
+## Screenshot
+
+
+
+
 The work is provided “as is”. You may not hold the author liable.
 
 Please, if you think there is an error, do not stop commenting, as well as if you liked it.
