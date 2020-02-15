@@ -46,7 +46,7 @@ https://github.com/NicolasCARPi/jquery_jeditable/
 
 ## Screenshot
 
-
+![https://github.com/myappgini/tvedit/blob/master/screenshots/tvedit.png](https://github.com/myappgini/tvedit/blob/master/screenshots/tvedit.png?raw=true)
 
 
 The work is provided “as is”. You may not hold the author liable.
