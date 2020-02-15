@@ -1,36 +1,36 @@
-editor de campos en vista de tabla.
+Field editor in table view.
 
-Hola en esta portunidad les quiero dejar para sus programas una aplicacion que les permitira, en las vista de tablas, poder editar rapidamente los campos.
-Actulizando esta información via ajax.
-Del lado del servidor cuenta con toda la seguridad que ofrece appgini con respecto al usuario, ejecutando los hooks de antes de actualizar y luego de actualizar, tambien registra la ctualizacion del usuario.
+Hello in this port I want to leave for your programs an application that will allow you, in the tables view, to quickly edit the fields.
+Updating this information via ajax.
+On the server side it has all the security that appgini offers with respect to the user, executing the hooks before updating and after updating, it also records the user's update.
 
-En primer lugar hay que registrar las librarias js para que estas se ejecuten.
+First of all you have to register the js libraries for them to run.
 
-Buscar y editar el archivo extras-header.php dentro de la carpeta hooks.
-Agregar las siguientes dos lineas de comando:
+Find and edit the extras-header.php file inside the hooks folder.
+Add the following two command lines:
 
-<script src="<?php echo PREPEND_PATH; ?>LTE/plugins/jquery-jeditable/jquery.jeditable.js"></script>
-<script src="<?php echo PREPEND_PATH; ?>LTE/tvedit/tv.edit.js"></script>
+<script src = "<? php echo PREPEND_PATH;?> LTE / plugins / jquery-jeditable / jquery.jeditable.js"> </script>
+<script src = "<? php echo PREPEND_PATH;?> LTE / tvedit / tv.edit.js"> </script>
 
-Para que se active dentro de la vista de tabla que necesites debes escribir dentro del archo tablename-tv.js (hay que crear uno nuevo si este no se encuentra) las siguientes lineas de comando:
+To be activated within the table view you need you must write within the table tablename-tv.js (you must create a new one if it is not found) the following command lines:
 
-$j(function(){
-    tv_editlets(AppGini.currentTableName());
+$ j (function () {
+Â Â Â Â tv_editlets (AppGini.currentTableName ());
 });
 
-basta solo con comentar la linea anterio para que la aplicación se desactive.
+just comment on the previous line so that the application is deactivated.
 
-Pronto intentare hacerlo qeu funcione con un plugin, para evitar tener que escribir algún código.
+Soon I will try to make it work with a plugin, to avoid having to write some code.
 
-Esta aplicación esta generada con código propio de appgini y la libraría jquery_jeditable
- que es de uso libre.
-la misma la pueden econtrar acá:
+This application is generated with appgini's own code and will be released by jquery_jeditable
+Â which is free to use.
+The same can be found here:
 https://github.com/NicolasCARPi/jquery_jeditable/
 
-la aplicación se entrga así como está, hice las pruebas de rigor de funcionamiento, el uso y disitrbucón de todo el código está permitido ya que es un código libre. De todas maneras no es reponsabilidad de este autor el mal uso o abuso del código.
+the application is delivered as it is, I did the tests of operating rigor, the use and distribution of all the code is allowed since it is a free code. In any case, this author is not responsible for the misuse or abuse of the code.
 
-Por favor si consideran que hay algún error no dejen de comentar, como así tambien si les ha gustado.
+Please, if you think there is an error, do not stop commenting, as well as if you liked it.
 
-muchas gracias!
+Thanks a lot!
 
-Espero lo disfruten
+I hope you enjoy it
