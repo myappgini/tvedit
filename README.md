@@ -16,7 +16,7 @@ download from github repository:
 ## Setup
 
 First of all you have to register the js libraries for them to run.
-Find and edit the `extras-header.php` file inside the hooks folder.
+Find and edit the `header-extras.php` file inside the hooks folder.
 Add the following two command lines:
   
     <script  src = "<?php echo PREPEND_PATH;?>LTE/plugins/jquery-jeditable/jquery.jeditable.js"></script>
@@ -46,7 +46,7 @@ https://github.com/NicolasCARPi/jquery_jeditable/
 
 The work is provided “as is”. You may not hold the author liable.
 
-Please, if you think there is an error, do not stop commenting, as well as if you liked it.
+Please, if you think there is an error, do not stop commenting, as well as if you liked it. Also if they have any suggestions
 
 Thanks a lot!
 
