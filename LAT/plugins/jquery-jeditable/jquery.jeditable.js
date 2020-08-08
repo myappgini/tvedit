@@ -17,6 +17,7 @@
  * @param {Number} [options.cols] - Number of columns if using textarea
  * @param {String} [options.cssclass] - CSS class to apply to input form; use 'inherit' to copy from parent
  * @param {String} [options.inputcssclass] - CSS class to apply to input. 'inherit' to copy from parent
+ * @param {Function} [options.intercept] - Intercept the returned data so you have a chance to process it before returning it in the page
  * @param {String|Function} [options.data] - Content loaded in the form
  * @param {String} [options.event='click'] - jQuery event such as 'click' of 'dblclick'. See https://api.jquery.com/category/events/
  * @param {String} [options.formid] - Give an id to the form that is produced
@@ -89,7 +90,7 @@
         }
         if ('destroy' === target) {
             $(this)
-                .unbind($(this).data('event.editable'))
+                .off($(this).data('event.editable'))
                 .removeData('disabled.editable')
                 .removeData('event.editable');
             return;
@@ -136,7 +137,7 @@
             }
 
             // EVENT IS FIRED
-            $(this).bind(settings.event, function(e) {
+            $(this).on(settings.event, function(e) {
 
                 /* Abort if element is disabled. */
                 if (true === $(this).data('disabled.editable')) {
@@ -299,7 +300,7 @@
                 plugin.apply(form, [settings, self]);
 
                 /* Focus to first visible form element. */
-                form.find(':input:visible:enabled:first').focus();
+                form.find(':input:visible:enabled:first').trigger('focus');
 
                 /* Highlight input contents when requested. */
                 if (settings.select) {
@@ -307,7 +308,7 @@
                 }
 
                 /* discard changes if pressing esc */
-                $(this).keydown(function(e) {
+                $(this).on('keydown', function(e) {
                     if (e.which === 27) {
                         e.preventDefault();
                         reset.apply(form, [settings, self]);
@@ -327,7 +328,7 @@
                     input.blur(function(e) {
                         /* Prevent double submit if submit was clicked. */
                         t = self.setTimeout(function() {
-                            form.submit();
+                            form.trigger('submit');
                         }, 200);
                     });
                 } else if ($.isFunction(settings.onblur)) {
@@ -339,7 +340,7 @@
                     });
                 }
 
-                form.submit(function(e) {
+                form.on('submit', function(e) {
 
                     /* Do no submit. */
                     e.preventDefault();
@@ -471,7 +472,7 @@
             // DESTROY
             self.destroy = function(form) {
                 $(self)
-                .unbind($(self).data('event.editable'))
+                .off($(self).data('event.editable'))
                 .removeData('disabled.editable')
                 .removeData('event.editable');
 
@@ -558,9 +559,9 @@ var _supportInType = function (type) {
                     if (settings.submit) {
                         /* If given html string use that. */
                         if (settings.submit.match(/>$/)) {
-                            submit = $(settings.submit).click(function() {
+                            submit = $(settings.submit).on('click', function() {
                                 if (submit.attr('type') !== 'submit') {
-                                    form.submit();
+                                    form.trigger('submit');
                                 }
                             });
                         /* Otherwise use button with given string as text. */
@@ -588,7 +589,7 @@ var _supportInType = function (type) {
                         }
                         $(this).append(cancel);
 
-                        $(cancel).click(function(event) {
+                        $(cancel).on('click', function(event) {
                             var reset;
                             if ($.isFunction($.editable.types[settings.type].reset)) {
                                 reset = $.editable.types[settings.type].reset;
@@ -732,7 +733,7 @@ var _supportInType = function (type) {
                     if (!settings.submit) {
                         var form = this;
                         $(this).find('select').change(function() {
-                            form.submit();
+                            form.trigger('submit');
                         });
                     }
                 }
