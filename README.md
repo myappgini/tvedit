@@ -58,6 +58,7 @@ https://github.com/NicolasCARPi/jquery_jeditable/
 - Update jeditable library.
 - Changue de folder control name LTE to LAT
 - the callback function is enabled by calling the ``tv_callback (result, settings, submitdata)`` function
+- can edit empty field
 
 ## Screenshot
 
