@@ -48,6 +48,7 @@ https://github.com/NicolasCARPi/jquery_jeditable/
 - It adds the possibility of deactivating the fields in the table that you do not want to edit online.
 - Update jeditable library.
 - Changue de folder control name LTE to LAT
+- the callback function is enabled by calling the ``tv_callback (result, settings, submitdata)`` function
 
 ## Screenshot
 
