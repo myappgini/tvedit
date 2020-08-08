@@ -34,6 +34,13 @@ Just comment on the previous line so that the application is deactivated.
 
 > The callback function is enabled by calling the ``tv_callback (result, settings, submitdata){}`` function. With this callback function, you can achieve, once the modification has been made in the table, also update other data in the table.
 
+    function tv_callback(result, settings, submitdata){
+        $j.get('hooks/myfunction-ajax.php',{id:submitdata.id})
+            .done(function(data){
+                $j('#tablename-fieldanme-'+submitdata.id + ' > a').text(data.field);
+        });
+    }
+
 Soon I will try to make it work with a plugin, to avoid having to write some code.
 
 This application is generated with appgini's own code and will be released by jquery_jeditable
