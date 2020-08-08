@@ -45,9 +45,9 @@ https://github.com/NicolasCARPi/jquery_jeditable/
 ## Updates
 08/08/20
 
-    - It adds the possibility of deactivating the fields in the table that you do not want to edit online.
-    - Update jeditable library.
-    - Changue de folder control name LTE to LAT
+- It adds the possibility of deactivating the fields in the table that you do not want to edit online.
+- Update jeditable library.
+- Changue de folder control name LTE to LAT
 
 ## Screenshot
 
