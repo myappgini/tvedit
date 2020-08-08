@@ -25,10 +25,12 @@ Add the following two command lines:
 To be activated within the table view you need you must write within the table tablename-tv.js (you must create a new one if it is not found) the following command lines:
 
     $j(function () {
-        tv_editlets (AppGini.currentTableName ());
+        tv_editlets (AppGini.currentTableName (),['Table_name_A','Table_Name_B']);
     });
 
-just comment on the previous line so that the application is deactivated.
+Just comment on the previous line so that the application is deactivated.
+
+An array is added to prevent the fields from being editable. The array is optional if nothing is placed, it enables all editable fields.
 
 Soon I will try to make it work with a plugin, to avoid having to write some code.
 
@@ -40,9 +42,15 @@ The same can be found here:
 
 https://github.com/NicolasCARPi/jquery_jeditable/
 
+## Updates
+08/08/20
+    It adds the possibility of deactivating the fields in the table that you do not want to edit online.
+    Update jeditable library.
+
 ## Screenshot
 
 ![https://github.com/myappgini/tvedit/blob/master/screenshots/tvedit.png](https://github.com/myappgini/tvedit/blob/master/screenshots/tvedit.png?raw=true)
+![https://github.com/myappgini/tvedit/blob/master/screenshots/tvedit_diable_customer_field.png](https://github.com/myappgini/tvedit/blob/master/screenshots/tvedit_diable_customer_field.png?raw=true)
 
 The work is provided “as is”. You may not hold the author liable.
 
