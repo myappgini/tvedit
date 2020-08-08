@@ -2,11 +2,15 @@ var submitdata = { tn: '', id: '', fn: '' };
 
 function tv_editlets(tn, ingnore = []) { //ignore has field name with ignore
     add_buttons(tn);
-    var td = $j('tr > td[id^="' + tn + '"] > a').addClass('tve');
+    //var td = $j('tr > td[id^="' + tn + '"] > a').addClass('tve');
+    var td = $j('tr > td[id^="' + tn + '"]').addClass('tve');
     if (typeof ingnore !== 'undefined' && ingnore.length > 0) {
         ingnore.forEach(element => {
             $j.each(td, function() {
-                var a = $j(this).parent().attr('id')
+                var a = $j(this).attr('id')
+                if (!$j(this).children().length) {
+                    $j(this).append('<a></a>')
+                }
                 if (a.indexOf(element) !== -1) {
                     //remove elements in ignore array
                     $j(this).removeClass('tve');
@@ -15,7 +19,7 @@ function tv_editlets(tn, ingnore = []) { //ignore has field name with ignore
         })
     }
 
-    td = $j('.tve');
+    td = $j('.tve >a');
 
     submitdata.tn = tn;
     td.prop("onclick", null).off("click")
