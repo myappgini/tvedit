@@ -32,6 +32,8 @@ Just comment on the previous line so that the application is deactivated.
 
 > An array is added to prevent the fields from being editable. The array is optional if nothing is placed, it enables all editable fields.
 
+> The callback function is enabled by calling the ``tv_callback (result, settings, submitdata){}`` function. With this callback function, you can achieve, once the modification has been made in the table, also update other data in the table.
+
 Soon I will try to make it work with a plugin, to avoid having to write some code.
 
 This application is generated with appgini's own code and will be released by jquery_jeditable
